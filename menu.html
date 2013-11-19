@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Dawg Pizza">
+		<meta name="author" content="ttulga">
+		<meta name="viewport" content="width=device-width, intial-scale=1.0"> 
+		<title>Dawg Pizza</title>
+		<link rel="shortcut icon" href="img/logo.png">
+		<!-- hot link to Bootstrap stylesheet -->
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="page-header">
+					<a href="index.html"><img class="logo" src="img/logo.png" alt="logo"></a>
+					<div class="description">
+						<p>Awesome wood-fired pizza with fresh ingredients baked to order. Come in and eat, or call us for delivery!</p> 
+					</div>	
+				</div>
+
+				<nav class="navbar navbar-default" role="navigation">
+	                <div class="navbar-header">
+	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".dawgpizza-navbar-menu">
+	                        <span class="sr-only">Toggle Navigation</span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                    </button>
+	                </div>
+
+	                <div class="collapse navbar-collapse dawgpizza-navbar-menu">
+	                    <ul class="nav navbar-nav">
+	                        <li class="active"><a href="index.html">Home</a></li>
+	                        <li><a href="menu.html">Menu</a></li>
+	                        <li><a href="about.html">About Us</a></li>    
+	                        <li><a href="order.html">Order</a></li>           
+	                    </ul>
+	                </div>
+	            </nav>
+	        </header>
+
+	        <!-- used cols to make space on right for pictures -->
+			<div class="row">
+				 <div class="pictures">
+				 	<img class="order" src="img/pizza-order.jpg" alt="pizza">
+					<img class="order" src="img/menu-pizza1.jpg" alt="pizza">	
+					<img class="order" src="img/menu-pizza2.jpg" alt="pizza">
+				 </div>
+					        
+				<div class="col-md-8">
+					<div class="container-pizza"><h1>Pizzas</h1></div>
+				</div>
+
+				<!-- redundant, but had to use multiple col-md-8 classes to -->
+				<!-- put specific pictures next to parts of menu -->
+				<img class="order" src="img/soda.jpg" alt="soda">
+				<div class="col-md-8">
+					<div class="container-drinks"><h1>Drinks</h1></div>
+				</div>
+
+				<img class="order" src="img/dessert.jpg" alt="dessert">
+				<div class="col-md-8">
+					<div class="container-desserts"><h1>Desserts</h1></div>
+				</div>
+			</div>
+	
+			<!-- templates for entries -->
+			<!-- used to get code, doesnt actually display -->
+			<dl class="template-pizza">
+				<dt class="name"></dt>
+				<dd class="description"></dd>
+				<dd class="item">
+					<span class="small"></span> 
+					<span class="medium"></span> 
+					<span class="large"></span>
+				</dd>
+			</dl>
+
+			<!-- this part is a little redundant, make into one somehow later -->
+			<dl class="template-drinks">
+				<dt class="name"></dt>
+				<dd class="prices"></dd>
+			</dl>
+
+			<dl class="template-desserts">
+				<dt class="name"></dt>
+				<dd class="prices"></dd>
+			</dl>
+			
+			
+	    	<footer>		
+		    	<!-- used wrapper div (credit to Staffan) to keep footer box fixed to max width of rest of container -->
+	    		<div class="wrapper">
+					<div class="footer">
+						<!-- &nbsp allows the spacing to stay -->
+						<p>Call us for delivery: 206-555-1212&nbsp;  |   </p>
+						<p><a class="hyperlink" href="mailto:dawgpizzaseattle@gmail.com">Email Us&nbsp;  |   </a></p>
+						<p><a class="hyperlink" href="twitter.com/DawgPizzaSea">Follow Us On Twitter&nbsp;   |   </a></p>
+						<p>&copy;2013 Dawg Pizza</p>
+					</div>
+				</div>
+			</footer>
+			<a href="https://github.com/ttulga">Github Repository</a>
+    	</div> <!-- container -->
+
+    	<!-- hot links to Bootstrap JavaScript and jQuery (required by Bootstrap) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="http://www.dawgpizza.com/orders/menu.js"></script>
+        <script src="js/renderMenu.js"></script>
+	</body>
+</html>

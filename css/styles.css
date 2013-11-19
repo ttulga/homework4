@@ -1,0 +1,171 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab);
+
+
+/* ---------JavaScript--------- */
+.template-pizza {
+    display: none;
+}
+
+/* use more of a solid color due to feeback */
+body {
+	background-color: #474442;
+	font-family: 'Josefin Slab', serif;
+	font-size: 24px;
+	color: #000 !important;
+}
+
+.container {
+	width: 90%;
+	background-color: #ECEDEA;
+	margin: 0 auto;
+	margin-top: 40px;
+	margin-bottom: 90px;
+	border-radius: 15px;
+}
+
+img {
+	display: block;
+}
+
+:focus {
+	color: red;
+}
+
+/* ---------header--------- */
+header {
+	width: 50%;
+	margin: 0 auto;
+	clear: both;
+}
+
+.page-header {
+	font-family: 'Roboto Condensed', sans-serif;
+	margin-bottom: 0;
+}
+
+/* used !important to override a lot of bootstraps styles */
+.description {
+	margin: 0 auto !important;
+}
+
+.navbar {
+	background-color: transparent;
+	border-color: transparent;
+	clear: both;
+	text-align: center;
+}
+
+.active a {
+	background-color: transparent !important;
+} 
+
+/* float: none to clear bootstrap float, clear: both did not work */
+ul {
+	display: inline-block;
+	margin: 0 auto !important;
+	float: none !important;
+}
+
+li a {
+	color: #000 !important;
+	font-weight: bold !important;
+}
+
+li a:hover {
+	text-decoration: underline !important;
+}
+
+.page-header img {
+	width: 60%;
+	margin-top: 20px;
+	display: block;
+	margin: 0 auto;
+}
+
+/* ---------Home--------- */
+.home-picture {
+	width: 45%;
+    margin: 0 auto;
+    margin-bottom: 300px;
+}
+
+iframe {
+	width: 300px;
+	height: 225px;	
+}
+
+.left {
+	position: absolute;
+	top: 350px;
+}
+
+
+/* ---------About--------- */
+.order {
+	width: 30%;
+	float: right;
+	padding: 10px;
+	clear: both;
+}
+
+/* float none to align pictures next to colomns */
+.col-md-8 {
+	float: none;
+}
+
+address {
+	margin-bottom: 50px;
+}
+
+/* overriding bootstrap font for h1,h2... */
+h1, h2 {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* ---------Menu--------- */
+
+/* ---------Footer--------- */
+.wrapper {
+	width: 90%;
+	max-width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+	position: fixed;
+	bottom: 0px;
+}
+
+.footer {
+	clear: both;
+	font-style: italic;
+	font-size: 70%;
+	position: relative;
+	width: 100%;
+	color: #ECEDEA;
+}
+
+.footer p {
+	display: inline-block;
+	padding: 5px;
+}
+
+small a {
+	text-decoration: none;
+	color: #000 !important;
+}
+
+.hyperlink {
+	text-decoration: none;
+	color: #ECEDEA;
+}
+
+.hyperlink:hover {
+	color: blue;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+	.map, .video {
+		display: none;
+	}
+}

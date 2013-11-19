@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Dawg Pizza">
+		<meta name="author" content="ttulga">
+		<meta name="viewport" content="width=device-width, intial-scale=1.0"> 
+		<title>Dawg Pizza</title>
+		<link rel="shortcut icon" href="img/logo.png">
+		<!-- hot link to Bootstrap stylesheet -->
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="page-header">
+					<a href="index.html" tabindex="1"><img class="logo" src="img/logo.png" alt="logo"></a>
+					<div class="description">
+						<p>Awesome wood-fired pizza with fresh ingredients baked to order. Come in and eat, or call us for delivery!</p> 
+					</div>	
+				</div>
+
+				<nav class="navbar navbar-default" role="navigation">
+	                <div class="navbar-header">
+	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".dawgpizza-navbar-menu">
+	                        <span class="sr-only">Toggle Navigation</span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                    </button>
+	                </div>
+
+	                <div class="collapse navbar-collapse dawgpizza-navbar-menu">
+	                    <ul class="nav navbar-nav">
+	                        <li class="active"><a href="index.html">Home</a></li>
+	                        <li><a href="menu.html">Menu</a></li>
+	                        <li><a href="about.html">About Us</a></li>   
+	                        <li><a href="order.html">Order</a></li>       
+	                    </ul>
+	                </div>
+	            </nav>
+	        </header>
+
+	        <div class="content-wrapper">
+	        	<div class="col right">
+	        		<img class="home-picture" src="img/pizza1.jpg" alt="pizza">
+	        	</div> <!-- right column -->
+
+	        	<div class="col left">
+	        		<div class="hours" tabindex="2">
+		        		<h2>Hours:</h2>
+						<div>Monday - Saturday</div> 
+						<div>10 AM to 11 PM</div> 
+						<div>(206)555-1212</div>
+					</div>
+
+					<!-- originally had div as address, however I needed to use the h2 element which cannot be -->
+					<!-- a descendant of the address element -->
+					<div class="address"> 
+						<h2>Location:</h2>
+						<div>4306 University Way NE,</div> 
+						<div> Seattle, WA 98105</div>
+					</div>
+
+					<div class="map">
+						<iframe width="300" height="300" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=4306+University+Way+NE,+Seattle,+WA+98105&amp;aq=&amp;sll=47.670993,-122.344752&amp;sspn=0.579358,0.621414&amp;ie=UTF8&amp;hq=&amp;hnear=4306+University+Way+NE,+Seattle,+Washington+98105&amp;t=m&amp;ll=47.660011,-122.312851&amp;spn=0.017343,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=4306+University+Way+NE,+Seattle,+WA+98105&amp;aq=&amp;sll=47.670993,-122.344752&amp;sspn=0.579358,0.621414&amp;ie=UTF8&amp;hq=&amp;hnear=4306+University+Way+NE,+Seattle,+Washington+98105&amp;t=m&amp;ll=47.660011,-122.312851&amp;spn=0.017343,0.025749&amp;z=14&amp;iwloc=A" style="color:#FFF;text-align:left">View Larger Map</a></small>
+					</div>
+	        	</div> <!-- left column -->
+			</div> <!-- content -->	
+
+			<!-- used wrapper div (credit to Staffan) to keep footer box fixed to max width of rest of container -->
+			<div class="wrapper">
+				<div class="footer">
+					<!-- &nbsp allows the spacing to stay -->
+					<p>Call us for delivery: 206-555-1212&nbsp;  |   </p>
+					<p><a class="hyperlink" href="mailto:dawgpizzaseattle@gmail.com">Email Us&nbsp;  |   </a></p>
+					<p><a class="hyperlink" href="twitter.com/DawgPizzaSea">Follow Us On Twitter&nbsp;   |   </a></p>
+					<p>&copy;2013 Dawg Pizza</p>
+				</div>
+			</div>
+			<a href="https://github.com/ttulga">Github Repository</a>
+		</div> <!-- container -->
+
+		<!-- hot links to Bootstrap JavaScript and jQuery (required by Bootstrap) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	</body>
+</html>
