@@ -1,46 +1,46 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="description" content="Dawg Pizza">
-		<meta name="author" content="ttulga">
-		<meta name="viewport" content="width=device-width, intial-scale=1.0"> 
-		<title>Dawg Pizza</title>
-		<link rel="shortcut icon" href="img/logo.png">
-		<!-- hot link to Bootstrap stylesheet -->
-		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/styles.css">
-	</head>
-	<body>
-		<div class="container">
-			<header>
-				<div class="page-header">
-					<a href="index.html" tabindex="1"><img class="logo" src="img/logo.png" alt="logo"></a>
-					<div class="description">
-						<p>Awesome wood-fired pizza with fresh ingredients baked to order. Come in and eat, or call us for delivery!</p> 
-					</div>	
-				</div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Dawg Pizza">
+        <meta name="author" content="ttulga">
+        <!-- <meta name="viewport" content="width=device-width, intial-scale=1.0"> -->
+        <title>Dawg Pizza</title>
+        <link rel="shortcut icon" href="img/logo.png">
+        <!-- hot link to Bootstrap stylesheet -->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="page-header">
+                    <a href="index.html" tabindex="1"><img class="logo" src="img/logo.png" alt="logo"></a>
+                    <div class="description">
+                        <p>Awesome wood-fired pizza with fresh ingredients baked to order. Come in and eat, or call us for delivery!</p> 
+                    </div>  
+                </div>
 
-				<nav class="navbar navbar-default" role="navigation">
-	                <div class="navbar-header">
-	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".dawgpizza-navbar-menu">
-	                        <span class="sr-only">Toggle Navigation</span>
-	                        <span class="icon-bar"></span>
-	                        <span class="icon-bar"></span>
-	                        <span class="icon-bar"></span>
-	                    </button>
-	                </div>
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".dawgpizza-navbar-menu">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
 
-	                <div class="collapse navbar-collapse dawgpizza-navbar-menu">
-	                    <ul class="nav navbar-nav">
-	                        <li class="active"><a href="index.html">Home</a></li>
-	                        <li><a href="menu.html">Menu</a></li>
-	                        <li><a href="about.html">About Us</a></li>   
-	                        <li><a href="order.html">Order</a></li>            
-	                    </ul>
-	                </div>
-	            </nav>
-	        </header>
+                    <div class="collapse navbar-collapse dawgpizza-navbar-menu">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="about.html">About Us</a></li>   
+                            <li><a href="order.html">Order</a></li>            
+                        </ul>
+                    </div>
+                </nav>
+            </header>
 
 
             <h1 class="page-title">Order our Pizza!</h1>
@@ -50,85 +50,148 @@
             <div class="row">
                 <div class="col-md-4 col-md-push-8">
                     <h2>Your Cart</h2>
-                    <div class="cart-items-container"></div>
+                    <div class="cart-container"></div>
                     <div class="cart-footer">
                         <div class="row total-row">
                             <div class="col-xs-10">
                                 Total:
                             </div>
-                            <div class="col-xs-2">
-                                $<span class="total-price"></span>
+                            <div class="col-md-10">
+                                <p>Sub Total: <span class="subtotal col-md-12"></span></p>
+                                <p>Tax: <span class="tax col-md-12"></span></p>
+                                <p>Total: <span class="total-price col-md-12"></span></p>                                
                             </div>
+                           
                         </div>
                         <div class="row">
                             <div class="col-xs-12 button-row">
                                 <button type="button" class="btn btn-primary place-order">Place My Order</button>
+                                <button type="button" class="btn btn-default empty">Clear My Order</button>
                             </div>
                         </div>                        
                     </div>
                 </div>
-                <div class="col-md-8 col-md-pull-4">
-                    <div class="movies-container"></div>        
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="container-pizza"><h1>Pizzas</h1></div>   
+                </div>
+                <div class="col-md-8">
+                    <div class="container-drinks"><h1>Drinks</h1></div>
+                </div>
+                <div class="col-md-8">
+                    <div class="container-desserts"><h1>Desserts</h1></div>
                 </div>
             </div>
 
-            <!-- used wrapper div (credit to Staffan) to keep footer box fixed to max width of rest of container -->
-			<div class="wrapper">
-				<div class="footer">
-					<!-- &nbsp allows the spacing to stay -->
-					<p>Call us for delivery: 206-555-1212&nbsp;  |   </p>
-					<p><a class="hyperlink" href="mailto:dawgpizzaseattle@gmail.com">Email Us&nbsp;  |   </a></p>
-					<p><a class="hyperlink" href="twitter.com/DawgPizzaSea">Follow Us On Twitter&nbsp;   |   </a></p>
-					<p>&copy;2013 Dawg Pizza</p>
-				</div>
-			</div>
-			<a href="https://github.com/ttulga">Github Repository</a>
-        </div> <!-- .container -->
 
-        <div class="templates">
+       
+            <div class="modal fade order-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Submit Your Order</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form method="POST" action="http://dawgpizza.com/orders/" class="form-horizontal submit-order" role="form">
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label" for="first-name">Name</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" name="first-name" id="first-name" placeholder="first name" required>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <input type="text" class="form-control" name="last-name" id="last-name" placeholder="last name" required>
+                                    </div>
+                                </div> 
 
-            <!-- movie template -->
-            <div class="movie-template movie clearfix">
+                                 <div class="form-group">
+                                    <label class="col-lg-2 control-label" for="addr-1">Address</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control" name="addr-1" id="addr-1" placeholder="street address" required>
+                                        <input type="text" class="form-control" name="addr-2">
+                                        <input type="text" class="form-control" name="addr-3">
+                                    </div>
+                                </div>   
 
-                <img class="pic" src="" alt="">
-                <h2 class="title"></h2>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label" for="zip"></label>     
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" name="zip" placeholder="zip code" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label" for="phone">Phone</label>
+                                    <div class="col-lg-9">
+                                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="primary phone number" required>
+                                    </div>
+                                </div>    
+                            </form>
+                        </div> <!-- modal body -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+                            <button type="submit" class="btn btn-primary submit">Submit Order</button>
+                        </div>
+                    </div> <!-- modal content -->
+                </div> <!-- modal dialog -->
+            </div> <!-- modal -->
+            
+        </div> <!-- .container -->  
 
-                <p class="format-template">
-                    <button type="button" class="btn btn-default add-to-cart">
-                        Buy on <img src="" alt="logo for format" class="format-logo"> 
-                        for $<span class="format-price"></span>
-                    </button>
+
+        <!-- templates for entries -->
+        <!-- used to get code, doesnt actually display -->
+        <dl class="cart-template row">
+            <p>
+                <button data-index="" type="button" class="btn btn-default btn-xs remove-one">&times;</button>
+                <span class="cart-item"></span>
+            </p>            
+        </dl>
+
+
+        <dl class="template template-pizza">
+            <dt class="name"></dt>
+            <dd class="description"></dd>
+            <dd class="item">
+                <p>
+                    <span class="small"></span>
+                    <button type="button" class="btn btn-default small-btn add-to-cart">Select</button>
                 </p>
+                <p>
+                    <span class="medium"></span>
+                    <button type="button" class="btn btn-default medium-btn add-to-cart">Select</button>
+                </p>
+                <p>
+                    <span class="large"></span>
+                    <button type="button" class="btn btn-default large-btn add-to-cart">Select</button>
+                </p>
+            </dd>
+        </dl>
 
+        <!-- this part is a little redundant, make into one somehow later -->
+        <div class="template template-drinks">
+            <div class="name"></div>
+            <div class="item">
+                <span class="prices"></span>
+                <button type="button" class="btn btn-default drinks-btn add-to-cart">Select</button>
             </div>
+        </div>
 
-            <!-- cart item template -->
-            <div class="cart-item-template cart-item row">
-                <div class="col-xs-10">
-                    <p><button type="button" class="btn btn-default btn-xs remove-item">&times;</button> 
-                        <span class="title"></span> (<span class="formatLabel"></span>)
-                    </p>
-                </div>
-                <div class="col-xs-2 col-price">
-                    <p>$<span class="price"></span></p>
-                </div>
+        <div class="template template-desserts">
+            <div class="name"></div>
+            <div class="item">
+                <span class="prices"></span>
+                <button type="button" class="btn btn-default desserts-btn add-to-cart">Select</button>
             </div>
-
-        </div> <!-- .templates -->
-        
-        <script src="lib/jquery-2.0.3/jquery-2.0.3.min.js"></script>
+        </div>
+        <!-- templates -->
 
         <!-- our own JavaScript files -->
-        <script src="js/utils.js"></script>
-        <script src="js/events.js"></script>
-        <script src="js/models.js"></script>
-        <script src="js/views.js"></script>
-        <script src="js/movies.js"></script>
-        <script src="js/movieView.js"></script>
-        <script src="js/moviesView.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="http://www.dawgpizza.com/orders/menu.js"></script>
+        <script src="js/renderMenu.js"></script>
         <script src="js/cart.js"></script>
-        <script src="js/cartItemView.js"></script>
-        <script src="js/cartView.js"></script>
-        <script src="js/controller.js"></script>
-	</body>
+    </body>
 </html>

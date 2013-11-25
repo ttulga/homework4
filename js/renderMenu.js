@@ -18,9 +18,28 @@ function renderPizza(entry) {
         clonedTemplate.find('.description').html(pizza.description);
 
         clonedTemplate.find('.small').html("$" + pizza.prices[0]);
-        clonedTemplate.find('.medium').html(" / $" + pizza.prices[1]);
-        clonedTemplate.find('.large').html(" / $" + pizza.prices[2]);
-        clonedTemplate.removeClass('template-pizza');
+        clonedTemplate.find('.small-btn').attr({
+            'data-type': pizza.type,
+            'data-name': pizza.name,
+            'data-size': 'small',
+            'data-price': pizza.prices[0]
+        });
+        clonedTemplate.find('.medium').html("$" + pizza.prices[1]);
+        clonedTemplate.find('.medium-btn').attr({
+            'data-type': pizza.type,
+            'data-name': pizza.name,
+            'data-size': 'medium',
+            'data-price': pizza.prices[1]
+        });
+        clonedTemplate.find('.large').html("$" + pizza.prices[2]);
+        clonedTemplate.find('.large-btn').attr({
+            'data-type': pizza.type,
+            'data-name': pizza.name,
+            'data-size': 'large',
+            'data-price': pizza.prices[2]
+        });
+
+        clonedTemplate.removeClass('template');
         container.append(clonedTemplate);
     } //for each pizza
 }
@@ -37,7 +56,11 @@ function renderDrinks(entry) {
         clonedTemplate = template.clone();
         clonedTemplate.find('.name').html(drink.name);
         clonedTemplate.find('.prices').html("$" + drink.price);
-        clonedTemplate.removeClass('template-pizza');
+        clonedTemplate.find('.drinks-btn').attr({
+            'data-name': drink.name,
+            'data-price': drink.price
+        });
+        clonedTemplate.removeClass('template');
         container.append(clonedTemplate);
     } //for each drink
 }
@@ -54,7 +77,11 @@ function renderDesserts(entry) {
         clonedTemplate = template.clone();
         clonedTemplate.find('.name').html(dessert.name);
         clonedTemplate.find('.prices').html("$" + dessert.price);
-        clonedTemplate.removeClass('template-pizza');
+        clonedTemplate.find('.desserts-btn').attr({
+            'data-name': dessert.name,
+            'data-price': dessert.price
+        });
+        clonedTemplate.removeClass('template');
         container.append(clonedTemplate);
     } //for each dessert
 }
