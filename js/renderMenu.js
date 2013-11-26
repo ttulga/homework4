@@ -59,6 +59,7 @@ function renderDrinks(entry) {
         clonedTemplate.find('.prices').html("$" + drink.price);
         clonedTemplate.find('.drinks-btn').attr({
             'data-name': drink.name,
+            'data-type': drink.type,
             'data-price': drink.price
         });
         clonedTemplate.removeClass('template');
@@ -80,6 +81,7 @@ function renderDesserts(entry) {
         clonedTemplate.find('.prices').html("$" + dessert.price);
         clonedTemplate.find('.desserts-btn').attr({
             'data-name': dessert.name,
+            'data-type': dessert.type,
             'data-price': dessert.price
         });
         clonedTemplate.removeClass('template');
