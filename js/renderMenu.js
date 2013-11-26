@@ -18,6 +18,7 @@ function renderPizza(entry) {
         clonedTemplate.find('.description').html(pizza.description);
 
         clonedTemplate.find('.small').html("$" + pizza.prices[0]);
+        // used attr to give the buttons what pizza is associated with it
         clonedTemplate.find('.small-btn').attr({
             'data-type': pizza.type,
             'data-name': pizza.name,

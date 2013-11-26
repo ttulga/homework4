@@ -83,6 +83,28 @@ li a:hover {
 	margin: 0 auto;
 }
 
+/* ---------Order-------- */
+/* had to position the cart absolutely becuase otherwise it was showing up above the menu
+   and i couldnt figure out how to get it not to
+*/
+.position-cart {
+	position: absolute;
+}
+
+/* fixing up the margins to look a bit nicer for the cart */
+.position-cart p {
+	margin: 0px;
+}
+
+.cart-container .row {
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.cart-footer {
+	margin-top: 10px;
+}
+
 /* ---------Home--------- */
 .home-picture {
 	width: 45%;
@@ -99,7 +121,6 @@ iframe {
 	position: absolute;
 	top: 350px;
 }
-
 
 /* ---------About--------- */
 .order {

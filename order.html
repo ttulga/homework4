@@ -45,23 +45,19 @@
 
             <h1 class="page-title">Order our Pizza!</h1>
 
-            <p class="lead">We deliver only within the Seattle city limits, from noon to 11:00pm. We accept cash or credit cards on delivery.</p>
+            <p class="lead">We deliver only within the Seattle city limits, from noon to 11:00pm. We accept cash or credit cards on delivery. $20 minimum purchase necessary.</p>
 
             <div class="row">
-                <div class="col-md-4 col-md-push-8">
+                <div class="col-md-4 col-md-push-8 position-cart">
                     <h2>Your Cart</h2>
                     <div class="cart-container"></div>
                     <div class="cart-footer">
                         <div class="row total-row">
-                            <div class="col-xs-10">
-                                Total:
-                            </div>
                             <div class="col-md-10">
                                 <p>Sub Total: <span class="subtotal col-md-12"></span></p>
                                 <p>Tax: <span class="tax col-md-12"></span></p>
                                 <p>Total: <span class="total-price col-md-12"></span></p>                                
                             </div>
-                           
                         </div>
                         <div class="row">
                             <div class="col-xs-12 button-row">
@@ -86,7 +82,7 @@
             </div>
 
 
-       
+            <!-- modal to fill in information shows up when place order is clicked -->
             <div class="modal fade order-modal">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -94,11 +90,11 @@
                             <h4 class="modal-title">Submit Your Order</h4>
                         </div>
                         <div class="modal-body">
-                            <form method="POST" action="http://dawgpizza.com/orders/" class="form-horizontal submit-order" role="form">
+                            <form class="form-horizontal submit-order" role="form">
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label" for="first-name">Name</label>
                                     <div class="col-lg-5">
-                                        <input type="text" class="form-control" name="first-name" id="first-name" placeholder="first name" required>
+                                        <input type="text" class="form-control first-name" name="first-name" id="first-name" placeholder="first name" required>
                                     </div>
                                     <div class="col-lg-4">
                                         <input type="text" class="form-control" name="last-name" id="last-name" placeholder="last name" required>
@@ -108,7 +104,7 @@
                                  <div class="form-group">
                                     <label class="col-lg-2 control-label" for="addr-1">Address</label>
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" name="addr-1" id="addr-1" placeholder="street address" required>
+                                        <input type="text" class="form-control addr-1" name="addr-1" id="addr-1" placeholder="street address" required>
                                         <input type="text" class="form-control" name="addr-2">
                                         <input type="text" class="form-control" name="addr-3">
                                     </div>
@@ -117,25 +113,29 @@
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label" for="zip"></label>     
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control" name="zip" placeholder="zip code" required>
+                                        <input type="text" class="form-control zip" name="zip" placeholder="zip code" required>
                                     </div>
                                 </div>
                                 
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label" for="phone">Phone</label>
                                     <div class="col-lg-9">
-                                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="primary phone number" required>
+                                        <input type="tel" class="form-control phone" name="phone" id="phone" placeholder="primary phone number" required>
                                     </div>
                                 </div>    
                             </form>
                         </div> <!-- modal body -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
-                            <button type="submit" class="btn btn-primary submit">Submit Order</button>
+                            <button type="button" class="btn btn-primary submit">Submit Order</button>
                         </div>
                     </div> <!-- modal content -->
                 </div> <!-- modal dialog -->
             </div> <!-- modal -->
+
+            <form method="POST" action="http://dawgpizza.com/orders/" id="submit-form" role="form">
+                <input type="hidden" name="cart" id="jsonForm">
+            </form>
             
         </div> <!-- .container -->  
 

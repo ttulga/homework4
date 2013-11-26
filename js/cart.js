@@ -38,17 +38,14 @@ $(function(){
         renderCart(cart, $('.cart-container'));
     });
 
+    // when clear my order is clicked, the cart items are set to [] which removes everything
     $('.empty').click(function(){
         cart.items = [];
         renderCart(cart, $('.cart-container'));
     });//emptyCart()
 
-    $('.remove-one').click(function(){
-        var iToRemove = this.getAttribute('data-index');
-        cart.items.splice(iToRemove, 1);
-        renderCart(cart, $('.cart-container'));
-    });
-
+    // when the place order button is clicked, it checks to see if cart has minimum of $20
+    // then shows a modal where you fill in information and submit to a confirmation page
     $('.place-order').click(function(){
         if(total < 20) {
             alert("Please order a minumum of $20");
@@ -58,14 +55,27 @@ $(function(){
         }
     });
 
-    $('.submit-order').click(function(){
-        cart.name = $('.first-name').val();
-        cart.address1 = $('.addr-1').val();
-        cart.zip = $('.zip').val();
-        cart.phone = $('.phone').val();
-        postCart(cart, $('.cart-form'));
-    });
+    // this is the submit button on the modal. gets the input values and checks to see if all the required information 
+    // is filled out then submits to the server.
+    $('.submit').click(function(){
+    	var input = $('.modal-body');
 
+        cart.name = input.find('input[name="first-name"]').val() + " " + input.find('input[name="last-name"]').val();
+        cart.address1 = input.find('input[name="addr-1"]').val();
+        cart.zip = input.find('input[name="zip"]').val();
+        cart.phone = input.find('input[name="phone"]').val();
+
+
+        if (cart.name.length > 0 && cart.address1.length > 0 && cart.zip.length > 0 && cart.phone.length > 0) {        	
+            $('#submit-form').find('input[name="cart"]').val(JSON.stringify(cart));
+        	$('#submit-form').submit();
+        }
+        else {
+            // i could not get the required attribute to display so i used an alert in case all the required
+            // fields were not submitted
+            alert('You have not filled in all the required fields');
+        }
+    });
 }); //doc ready
 
 // renderCart()
@@ -75,7 +85,7 @@ $(function(){
 //  - container (jQuery object) reference to the container <div>
 //
 function renderCart(cart, container) {
-    var i, item, removeBtn, clonedTemp;
+    var i, item, clonedTemp;
     var subtotal = 0;
     
     //empty the container of whatever is there currently
@@ -86,22 +96,21 @@ function renderCart(cart, container) {
         item = cart.items[i];
 
         clonedTemp = $('.cart-template').clone();
-        removeBtn = $('.remove-one').clone();
-        removeBtn.attr('data-index', i);
         clonedTemp.find('.cart-item').html(item.name + ' $' + item.price);
-        //i dont know why, but i need to remove cart-tamplate class even though there is no class
-        //if not then the items in cart show up multiple times
+        // the button to remove items gets an attribute of the index
+        clonedTemp.find('.remove-one').attr('data-index', i);
+        
+        // i dont know why, but i need to remove cart-tamplate class even though there is no class
+        // if not then the items in cart show up multiple times
         clonedTemp.removeClass('cart-template');
-        removeBtn.removeClass('remove-one');
-        container.append(removeBtn);
         container.append(clonedTemp);
-        subtotal += parseFloat(item.price);
+        subtotal += parseInt(item.price);
     } //for each cart item
 
 
-    //TODO: code to render sub-total price of the cart
-    //the tax amount (see instructions), 
-    //and the grand total
+    // renders the  sub-total price of the cart
+    // the tax amount 
+    // and the grand total
     var tax;
     tax = (subtotal * 0.095).toFixed(2);
     total = (subtotal * 1.095).toFixed(2);
@@ -109,21 +118,10 @@ function renderCart(cart, container) {
     $('.subtotal').html("$" + subtotal);
     $('.total-price').html("$" + total);
 
+    //if the remove item button is clicked it gets the attribute given and removes it
+    $('.remove-one').click(function(){
+        var idxToRemove = this.getAttribute('data-index');
+        cart.items.splice(idxToRemove, 1);
+        renderCart(cart, $('.cart-container'));
+    }); 
 } //renderCart()
-
-// postCart()
-// posts the cart model to the server using
-// the supplied HTML form
-// parameters are:
-//  - cart (object) reference to the cart model
-//  - cartForm (jQuery object) reference to the HTML form
-//
-function postCart(cart, cartForm) {
-    //find the input in the form that has the name of 'cart'    
-    //and set it's value to a JSON representation of the cart model
-    cartForm.find('input[name="cart"]').val(JSON.stringify(cart));
-    alert(cart);
-    //submit the form--this will navigate to an order confirmation page
-    cartForm.submit();
-    window.location = 'http://www.google.com';
-} //postCart()
